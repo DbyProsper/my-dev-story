@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Your Name | Full-Stack Developer Portfolio</title>
+        <title>Prosper Masuku | Full-Stack Developer Portfolio</title>
         <meta 
           name="description" 
           content="Full-Stack Developer specializing in React, TypeScript, and Node.js. Building beautiful, accessible, and high-performance web applications." 
