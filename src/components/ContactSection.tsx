@@ -66,7 +66,7 @@ const ContactSection = () => {
 
   const socialLinks = [
     { icon: <Github className="w-5 h-5" />, href: 'https://github.com/DbyProsper', label: 'GitHub' },
-    { icon: <Linkedin className="w-5 h-5" />, href: 'www.linkedin.com/in/prosper-masuku-25505a306', label: 'LinkedIn' },
+    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/prosper-masuku-25505a306', label: 'LinkedIn' },
     { icon: <Mail className="w-5 h-5" />, href: 'mailto:mthabisisebata113@gmail.com', label: 'Email' },
   ];
 
@@ -113,7 +113,7 @@ const ContactSection = () => {
                       ? 'border-destructive focus:border-destructive' 
                       : 'border-border focus:border-primary'
                   } text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20`}
-                  placeholder="John Doe"
+                  placeholder="Michael Jackson"
                   maxLength={100}
                   aria-describedby={errors.name ? 'name-error' : undefined}
                   aria-invalid={!!errors.name}
@@ -141,7 +141,7 @@ const ContactSection = () => {
                       ? 'border-destructive focus:border-destructive' 
                       : 'border-border focus:border-primary'
                   } text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20`}
-                  placeholder="john@example.com"
+                  placeholder="Michael@example.com"
                   maxLength={255}
                   aria-describedby={errors.email ? 'email-error' : undefined}
                   aria-invalid={!!errors.email}
@@ -219,10 +219,10 @@ const ContactSection = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <a 
-                      href="mailto:hello@example.com" 
+                      href="mailto:mthabisisebata113@gmail.com" 
                       className="text-foreground hover:text-primary transition-colors"
                     >
-                      hello@example.com
+                      mthabisisebata113@gmail.com
                     </a>
                   </div>
                 </div>
