@@ -33,7 +33,7 @@ const Milestone = ({ year, title, description, icon, isVisible, index }: Milesto
 
       {/* Timeline Node */}
       <div 
-        className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-card border-2 border-primary items-center justify-center text-primary z-10 transition-all duration-500 ${
+        className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-card border-2 border-primary items-center justify-center text-primary z-10 transition-all duration-500 ${
           isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
         }`}
         style={{ transitionDelay: `${index * 150}ms` }}
@@ -56,19 +56,19 @@ const JourneySection = () => {
       year: '2019',
       title: 'The Spark',
       description: 'Wrote my first "Hello World" and got hooked, Was in grade 10 doing IT as a subject at highschool. What started as curiosity became a passion that would change everything.',
-      icon: <Lightbulb className="w-6 h-6" />,
+      icon: <Lightbulb className="w-5 h-5" />,
     },
     {
       year: '2021',
       title: 'Deep Dive',
       description: 'Finished matric, Started learning HTML, CSS, and JavaScript. Built countless projects, broke things, fixed them, and learned the beauty of clean code.',
-      icon: <Code className="w-6 h-6" />,
+      icon: <Code className="w-5 h-5" />,
     },
     {
       year: '2022',
       title: 'Framework Era',
       description: 'Went into Varsity for my first year in Bsc Computer science and physics, Discovered React and fell in love with component-based architecture. Started building demo applications to learn more.',
-      icon: <Rocket className="w-6 h-6" />,
+      icon: <Rocket className="w-5 h-5" />,
     },
     {
       year: '2023',

@@ -110,20 +110,21 @@ const SkillsSection = () => {
       title: 'Frontend',
       icon: <Globe className="w-5 h-5" />,
       skills: [
-        { name: 'JavaScript / TypeScript', level: 92, icon: <Code2 className="w-5 h-5" />, color: '#f7df1e' },
-        { name: 'React / Next.js', level: 88, icon: <Code2 className="w-5 h-5" />, color: '#61dafb' },
         { name: 'HTML5 / CSS3', level: 95, icon: <Palette className="w-5 h-5" />, color: '#e34f26' },
+        { name: 'JavaScript / TypeScript', level: 92, icon: <Code2 className="w-5 h-5" />, color: '#f7df1e' },
         { name: 'Tailwind CSS', level: 90, icon: <Palette className="w-5 h-5" />, color: '#38bdf8' },
+        { name: 'React / Next.js', level: 88, icon: <Code2 className="w-5 h-5" />, color: '#61dafb' },
+        
       ],
     },
     {
       title: 'Backend',
       icon: <Server className="w-5 h-5" />,
       skills: [
-        { name: 'Node.js / Express', level: 85, icon: <Server className="w-5 h-5" />, color: '#68a063' },
-        { name: 'Python', level: 78, icon: <Code2 className="w-5 h-5" />, color: '#3776ab' },
-        { name: 'PostgreSQL / MongoDB', level: 80, icon: <Database className="w-5 h-5" />, color: '#336791' },
-        { name: 'REST APIs / GraphQL', level: 82, icon: <Server className="w-5 h-5" />, color: '#e535ab' },
+        { name: 'Python', level: 88, icon: <Code2 className="w-5 h-5" />, color: '#3776ab' },
+        { name: 'PostgreSQL / MongoDB', level: 83, icon: <Database className="w-5 h-5" />, color: '#336791' },
+        { name: 'Node.js / Express', level: 78, icon: <Server className="w-5 h-5" />, color: '#68a063' },
+        { name: 'REST APIs / GraphQL', level: 78, icon: <Server className="w-5 h-5" />, color: '#e535ab' },
       ],
     },
     {
@@ -131,9 +132,9 @@ const SkillsSection = () => {
       icon: <Wrench className="w-5 h-5" />,
       skills: [
         { name: 'Git / GitHub', level: 90, icon: <GitBranch className="w-5 h-5" />, color: '#f05032' },
-        { name: 'Docker / CI/CD', level: 75, icon: <Terminal className="w-5 h-5" />, color: '#2496ed' },
         { name: 'VS Code / Vim', level: 88, icon: <Code2 className="w-5 h-5" />, color: '#007acc' },
         { name: 'Linux / Terminal', level: 82, icon: <Terminal className="w-5 h-5" />, color: '#fcc624' },
+        { name: 'Docker / CI/CD', level: 75, icon: <Terminal className="w-5 h-5" />, color: '#2496ed' },
       ],
     },
   ];
@@ -195,7 +196,7 @@ const SkillsSection = () => {
         <div className="mt-16 text-center">
           <p className="text-muted-foreground mb-4">Also familiar with:</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {['Redux', 'Jest', 'Webpack', 'Firebase', 'AWS', 'Figma', 'Sass', 'Vite', 'Prisma', 'Socket.io'].map((skill) => (
+            {['Java(OOP)', 'C++', 'Webpack', 'Firebase', 'AWS', 'Figma', 'Sass', 'Vite', 'Prisma', 'Socket.io'].map((skill) => (
               <span
                 key={skill}
                 className="px-3 py-1 rounded-full bg-muted/50 text-muted-foreground text-sm hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
