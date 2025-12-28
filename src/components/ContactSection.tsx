@@ -65,9 +65,9 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, href: 'https://github.com', label: 'GitHub' },
-    { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: <Mail className="w-5 h-5" />, href: 'mailto:hello@example.com', label: 'Email' },
+    { icon: <Github className="w-5 h-5" />, href: 'https://github.com/DbyProsper', label: 'GitHub' },
+    { icon: <Linkedin className="w-5 h-5" />, href: 'www.linkedin.com/in/prosper-masuku-25505a306', label: 'LinkedIn' },
+    { icon: <Mail className="w-5 h-5" />, href: 'mailto:mthabisisebata113@gmail.com', label: 'Email' },
   ];
 
   return (
