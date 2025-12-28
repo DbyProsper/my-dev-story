@@ -60,7 +60,7 @@ const HeroSection = () => {
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 animate-slide-up delay-100">
             <span className="block text-foreground">Hi, I'm</span>
-            <span className="block gradient-text mt-2">Your Name</span>
+            <span className="block gradient-text mt-2">Prosper Masuku</span>
           </h1>
 
           {/* Typewriter Title */}
@@ -77,7 +77,7 @@ const HeroSection = () => {
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-slide-up delay-300">
             Full-Stack Developer passionate about building beautiful, accessible, 
-            and high-performance web applications. Let's create something amazing together.
+            and high-performance web applications. Let's create something amazing together!
           </p>
 
           {/* CTA Buttons */}
@@ -99,7 +99,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/DbyProsper"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit GitHub profile"
@@ -115,7 +115,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/prosper-masuku-25505a306/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit LinkedIn profile"
@@ -135,7 +135,7 @@ const HeroSection = () => {
               className="text-muted-foreground hover:text-foreground"
               asChild
             >
-              <a href="/cv.pdf" download aria-label="Download CV">
+              <a href="https://docs.google.com/document/d/1ovo9H0phhzPVmQ5c5Dp4RZIVns5HFfOO/edit?usp=sharing&ouid=108834253665719106554&rtpof=true&sd=true" download aria-label="Download CV">
                 <Download className="w-4 h-4" />
                 Download CV
               </a>
