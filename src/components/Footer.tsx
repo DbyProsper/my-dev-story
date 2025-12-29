@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/DbyProsper"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -30,7 +30,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/prosper-masuku-25505a306/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -39,7 +39,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:mthabisisebata113@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
@@ -51,7 +51,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-border/30 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-            © {currentYear} · Made with <Heart className="w-4 h-4 text-secondary inline" /> using React & TypeScript
+            © {currentYear} · Prosper Masuku - Made with React & TypeScript
           </p>
         </div>
       </div>
