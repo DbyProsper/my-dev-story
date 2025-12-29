@@ -25,7 +25,7 @@ const projects: Project[] = [
     problem: 'Remote teams struggle with task visibility and often lose track of project progress across time zones.',
     solution: 'Built a real-time sync engine using WebSockets that keeps all team members updated instantly, with smart notifications that respect work hours.',
     tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Socket.io', 'Redis'],
-    image: 'linear-gradient(135deg, hsl(175 80% 50% / 0.3), hsl(265 80% 65% / 0.3))',
+    image: 'url(/public/taskflow-illustration.png)',
     liveUrl: 'https://teamflow-pro.vercel.app/',
     githubUrl: 'https://github.com/DbyProsper/teamflow-pro',
     featured: true,
