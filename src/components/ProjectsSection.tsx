@@ -25,7 +25,7 @@ const projects: Project[] = [
     problem: 'Remote teams struggle with task visibility and often lose track of project progress across time zones.',
     solution: 'Built a real-time sync engine using WebSockets that keeps all team members updated instantly, with smart notifications that respect work hours.',
     tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Socket.io', 'Redis'],
-    image: 'url(/public/taskflow-illustration.png)',
+    image: 'url(/taskflow-illustration.png)',
     liveUrl: 'https://teamflow-pro.vercel.app/',
     githubUrl: 'https://github.com/DbyProsper/teamflow-pro',
     featured: true,
@@ -38,7 +38,7 @@ const projects: Project[] = [
     problem: 'Sorting files manually is time-consuming and prone to errors, leading to cluttered directories.',
     solution: 'Developed a Python script that scans a specified directory, identifies file types, and moves them into corresponding folders automatically.',
     tech: ['Python', 'OS Module', 'Shutil'],
-    image: 'linear-gradient(135deg, hsl(15 90% 60% / 0.3), hsl(45 90% 50% / 0.3))',
+    image: 'url(/file-org-ill.png)',
     liveUrl: 'https://github.com/DbyProsper/Python-file-organizer',
     githubUrl: 'https://github.com/DbyProsper/Python-file-organizer',
     featured: true,
@@ -51,7 +51,7 @@ const projects: Project[] = [
     problem: 'Generic weather apps fail to capture microclimates and provide generic forecasts.',
     solution: 'Integrated multiple weather APIs and used machine learning to improve accuracy for specific locations, presented through engaging SVG animations.',
     tech: ['React', 'D3.js', 'Python', 'FastAPI', 'TensorFlow'],
-    image: 'linear-gradient(135deg, hsl(200 80% 50% / 0.3), hsl(220 80% 65% / 0.3))',
+    image: 'url(/wt1.png)',
     liveUrl: 'https://precision-weather.vercel.app/',
     githubUrl: 'https://github.com/DbyProsper/precision-weather',
     featured: false,
@@ -64,9 +64,9 @@ const projects: Project[] = [
     problem: 'Existing note apps don\'t understand developer workflows and lack code-first features.',
     solution: 'Built a custom markdown parser with code block execution, vim keybindings, and seamless git sync for version control.',
     tech: ['Electron', 'React', 'Monaco Editor', 'SQLite'],
-    image: 'linear-gradient(135deg, hsl(280 80% 50% / 0.3), hsl(320 80% 65% / 0.3))',
-    liveUrl: '#',
-    githubUrl: '#',
+    image: 'url(/devnotes.png)',
+    liveUrl: 'https://devnotes-plus.vercel.app/',
+    githubUrl: 'https://github.com/DbyProsper/devnotes-plus',
     featured: false,
   },
 ];
@@ -261,7 +261,7 @@ const ProjectsSection = () => {
         {/* View More */}
         <div className="text-center mt-12">
           <Button variant="heroOutline" size="lg" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/DbyProsper" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5" /> View All on GitHub
             </a>
           </Button>
