@@ -18,7 +18,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
+    id: 2,
     title: 'TaskFlow Pro',
     description: 'A modern task management app with real-time collaboration and smart productivity insights.',
     longDescription: 'TaskFlow Pro is a comprehensive project management solution designed for remote teams. It features real-time updates, kanban boards, and AI-powered productivity analytics.',
@@ -31,7 +31,7 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: 2,
+    id: 1,
     title: 'Automated fileorg',
     description: 'A Python automation script that organizes files in a directory into folders based on file type.',
     longDescription: 'Automated fileorg allows users to organize files in a directory into folders based on file type. It supports various file types and can be customized to include additional categories.',
