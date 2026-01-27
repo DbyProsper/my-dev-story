@@ -18,7 +18,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 2,
+    id: 1,
     title: 'TaskFlow Pro',
     description: 'A modern task management app with real-time collaboration and smart productivity insights.',
     longDescription: 'TaskFlow Pro is a comprehensive project management solution designed for remote teams. It features real-time updates, kanban boards, and AI-powered productivity analytics.',
@@ -31,16 +31,16 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    id: 1,
-    title: 'Automated fileorg',
-    description: 'A Python automation script that organizes files in a directory into folders based on file type.',
-    longDescription: 'Automated fileorg allows users to organize files in a directory into folders based on file type. It supports various file types and can be customized to include additional categories.',
-    problem: 'Sorting files manually is time-consuming and prone to errors, leading to cluttered directories.',
-    solution: 'Developed a Python script that scans a specified directory, identifies file types, and moves them into corresponding folders automatically.',
-    tech: ['Python', 'OS Module', 'Shutil'],
-    image: 'url(/file-org-ill.png)',
-    liveUrl: 'https://github.com/DbyProsper/Python-file-organizer',
-    githubUrl: 'https://github.com/DbyProsper/Python-file-organizer',
+    id: 2,
+    title: 'UFH Tutor Application & Management System',
+    description: 'Full-stack Tutor Application & Management System for the University of Fort Hare (UFH).',
+    longDescription: 'UFH Tutor Application & Management System streamlines the tutor application process for students and administrators at the University of Fort Hare. It offers a user-friendly interface for students to apply for tutoring positions and a robust admin panel for managing applications.',
+    problem: 'Administration of tutor applications at UFH was manual, time-consuming, and prone to errors.',
+    solution: 'Designed and developed a full-stack Tutor Application & Management System for the University of Fort Hare (UFH). The system allows students to register, apply for tutoring positions, upload supporting documents, save draft applications, and track application status. Administrators can securely review applications, manage statuses, and oversee user roles.',
+    tech: ['Typescript', 'React', 'Supabase (Auth + PostgreSQL), Tailwind CSS'],
+    image: 'url(/Tuor portal.png)',
+    liveUrl: 'https://fort-hare-tutors-hub.vercel.app/',
+    githubUrl: 'https://github.com/DbyProsper/Fort-Hare-Tutors-Hub',
     featured: true,
   },
   {
