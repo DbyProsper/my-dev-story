@@ -38,7 +38,7 @@ const projects: Project[] = [
     problem: 'Administration of tutor applications at UFH was manual, time-consuming, and prone to errors.',
     solution: 'Designed and developed a full-stack Tutor Application & Management System for the University of Fort Hare (UFH). The system allows students to register, apply for tutoring positions, upload supporting documents, save draft applications, and track application status. Administrators can securely review applications, manage statuses, and oversee user roles.',
     tech: ['Typescript', 'React', 'Supabase (Auth + PostgreSQL), Tailwind CSS'],
-    image: 'url(/Tuor portal.png)',
+    image: 'url(/Tuorportal.png)',
     liveUrl: 'https://fort-hare-tutors-hub.vercel.app/',
     githubUrl: 'https://github.com/DbyProsper/Fort-Hare-Tutors-Hub',
     featured: true,
