@@ -9,6 +9,8 @@ const server = await createServer({
     configureServer(vite) {
       vite.middlewares.use(async (req, res, next) => {
         if (!req.url?.startsWith('/api/')) return next();
+        // Published content and media are public reads; keep admin and writes local.
+        if (process.env.PUBLISHED_SITE_URL && ['GET', 'HEAD'].includes(req.method) && /^\/api\/(content|media)(\?|$)/.test(req.url)) return next();
         try {
           let body = '';
           for await (const chunk of req) {

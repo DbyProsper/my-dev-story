@@ -29,7 +29,7 @@ const SkillCard = ({ name, level, icon, color, image, imageAlt, isVisible, delay
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      {image && <img src={image} alt={imageAlt} loading="lazy" className="portfolio-image w-full h-auto object-contain rounded-lg mb-4" />}
+      {image && <img src={image} alt={imageAlt} loading="lazy" className="w-full h-32 object-cover rounded-lg mb-4" />}
       <div className="flex items-center gap-3 mb-4">
         <div
           className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110"
@@ -69,7 +69,7 @@ interface SkillCategoryProps {
 
 const SkillCategory = ({ title, icon, skills, image, imageAlt, isVisible, baseDelay }: SkillCategoryProps) => (
   <div className="space-y-6">
-    {image && <img src={image} alt={imageAlt} loading="lazy" className="portfolio-image w-full h-auto object-contain rounded-lg" />}
+    {image && <img src={image} alt={imageAlt} loading="lazy" className="w-full h-40 object-cover rounded-lg" />}
     <div className="flex items-center gap-3">
       <span className="text-primary">{icon}</span>
       <h3 className="text-xl font-bold text-foreground">{title}</h3>

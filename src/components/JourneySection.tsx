@@ -27,7 +27,7 @@ const Milestone = ({ year, title, description, icon, image, imageAlt, isVisible,
         }`}
         style={{ transitionDelay: `${index * 150}ms` }}
       >
-        {image && <img src={image} alt={imageAlt} loading="lazy" className="portfolio-image w-full h-auto object-contain rounded-lg mb-4" />}
+        {image && <div className="group mb-4 h-48 sm:h-56 overflow-hidden rounded-lg bg-muted/30"><img src={image} alt={imageAlt} loading="lazy" className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" /></div>}
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-mono text-sm mb-3">
           {year}
         </span>

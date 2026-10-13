@@ -57,3 +57,7 @@ For an isolated admin UI demonstration, run `node tests/preview-admin.mjs`, then
 - Object storage has usage-based limits/costs. This design suits a small portfolio, not a high-volume CMS or messaging service.
 
 The admin manages site content and existing layout options. Structural redesigns and new application behavior still require code changes.
+
+### Preview published content locally
+
+Set `PUBLISHED_SITE_URL=https://my-dev-story-nine.vercel.app` in `.env.local` and restart `npm run dev`. Public content and uploaded media are read from that site; refresh after publishing changes. Admin, inbox, uploads, and contact writes remain local and require separate development credentials. Remove this setting to preview development storage or bundled defaults.

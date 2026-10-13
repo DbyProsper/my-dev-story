@@ -75,6 +75,10 @@ test('authenticated publishing and visitor inbox complete the full API flow', as
   const updated=structuredClone(initial.body.content); updated.hero.texts.Hi_Im='Welcome!';
   const saved=await call('admin-content','PUT',{content:updated,version:initial.body.version}); assert.equal(saved.statusCode,200);
   assert.equal((await call('content')).body.hero.texts.Hi_Im,'Welcome!');
+  updated.hero.texts.Hi_Im='Welcome again!';
+  const secondSave=await call('admin-content','PUT',{content:updated,version:saved.body.version});
+  assert.equal(secondSave.statusCode,200);
+  assert.equal((await call('content')).body.hero.texts.Hi_Im,'Welcome again!');
   assert.equal((await call('admin-content','PUT',{content:updated,version:null})).statusCode,409);
   const adminCookie=cookie; cookie='';
   assert.equal((await call('contact','POST',{name:'Test visitor',email:'test@example.com',message:'A test enquiry.'})).statusCode,201);
