@@ -3,6 +3,16 @@ import defaults from '../src/data/content.json' with { type: 'json' };
 export { defaults };
 export class ValidationError extends Error {}
 export function validateContent(value, template = defaults, path = '') {
+  if (/^\.projects\.projects\.\d+\.images$/.test(path)) {
+    // Galleries are optional for portfolios saved before this feature existed.
+    if (value === undefined) return;
+    if (!Array.isArray(value) || value.length > 20) throw new ValidationError('A project can have up to 20 additional images.');
+    value.forEach((item, index) => validateContent(item, { image: '', imageAlt: '' }, `${path}.${index}`));
+    for (const item of value) {
+      if (item.image && !/^(https:\/\/[^\s]+|\/(?!\/)[^\s]*)$/.test(item.image)) throw new ValidationError('Project images must use an HTTPS URL or site path.');
+    }
+    return;
+  }
   if (Array.isArray(template)) {
     if (!Array.isArray(value) || value.length > 100) throw new ValidationError(`${path}: expected a list of up to 100 items.`);
     value.forEach((item, index) => validateContent(item, template[0], `${path}.${index}`));

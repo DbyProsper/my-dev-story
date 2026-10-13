@@ -2,7 +2,9 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 import { Code2, Code, Server, Wrench, Database, Globe, Palette, GitBranch, Terminal, Rocket, Lightbulb, Trophy, Zap, Users, BookOpen, MessageSquare, Sparkles, Github, Linkedin, Mail } from 'lucide-react';
 import defaults from '@/data/content.json';
 
-export type SiteContent = typeof defaults;
+export type ProjectImage = { image: string; imageAlt: string };
+type ProjectContent = Omit<(typeof defaults.projects.projects)[number], 'images'> & { images: ProjectImage[] };
+export type SiteContent = Omit<typeof defaults, 'projects'> & { projects: Omit<typeof defaults.projects, 'projects'> & { projects: ProjectContent[] } };
 export const defaultContent: SiteContent = defaults;
 const ContentContext = createContext<SiteContent>(defaults);
 export const useContent = () => useContext(ContentContext);
@@ -10,10 +12,13 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
   const response = await fetch(`/api/${path}`, { cache: 'no-store', ...options, headers: { 'Content-Type': 'application/json', ...options.headers } });
   const data = await response.json().catch(() => ({ error: 'The website service is unavailable. Please try again later.' }));
   if (!response.ok || data.error) throw Object.assign(new Error(data.error || 'Request failed.'), { status: response.status });
+  // Older published portfolios predate project galleries.
+  const site = path === 'content' ? data : path === 'admin-content' && !options.method ? data.content : null;
+  if (site?.projects?.projects) site.projects.projects = site.projects.projects.map(project => ({ ...project, images: project.images ?? [] }));
   return data;
 }
 export function ContentProvider({ children, value }: { children: ReactNode; value?: SiteContent }) {
-  const [content, setContent] = useState(defaults);
+  const [content, setContent] = useState<SiteContent>(defaults);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState('');
   useEffect(() => {

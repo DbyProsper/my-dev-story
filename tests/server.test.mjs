@@ -93,3 +93,19 @@ test('authenticated publishing and visitor inbox complete the full API flow', as
   assert.match((await call('logout','POST')).headers['Set-Cookie'],/Max-Age=0/);
   delete process.env.BLOB_READ_WRITE_TOKEN;
 });
+
+
+test('project galleries accept old content and validate uploaded image lists', () => {
+  const content = structuredClone(defaults);
+  delete content.projects.projects[0].images;
+  validateContent(content);
+  content.projects.projects[0].images = [
+    { image: '/images/champs.png', imageAlt: 'Ordering screen' },
+    { image: 'https://example.com/detail.png', imageAlt: 'Order details' },
+  ];
+  validateContent(content);
+  content.projects.projects[0].images[0].image = 'javascript:alert(1)';
+  assert.throws(() => validateContent(content));
+  content.projects.projects[0].images = Array.from({length:21}, () => ({image:'/image.png',imageAlt:''}));
+  assert.throws(() => validateContent(content));
+});

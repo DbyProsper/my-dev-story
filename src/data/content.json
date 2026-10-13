@@ -257,7 +257,8 @@
         "liveUrl": "https://champs-driver-hub.vercel.app/",
         "githubUrl": "",
         "privateRepository": true,
-        "featured": true
+        "featured": true,
+        "images": []
       },
       {
         "id": 6,
@@ -275,7 +276,8 @@
         "liveUrl": "https://ufh-opportunity-hub.vercel.app",
         "githubUrl": "https://github.com/DbyProsper/ufh-opportunity-engine",
         "privateRepository": false,
-        "featured": true
+        "featured": true,
+        "images": []
       },
       {
         "id": 7,
@@ -293,7 +295,8 @@
         "liveUrl": "https://artist-amp.vercel.app/landing",
         "githubUrl": "",
         "privateRepository": true,
-        "featured": true
+        "featured": true,
+        "images": []
       },
       {
         "id": 1,
@@ -314,7 +317,8 @@
         "liveUrl": "https://teamflow-pro.vercel.app/",
         "githubUrl": "https://github.com/DbyProsper/teamflow-pro",
         "featured": true,
-        "privateRepository": false
+        "privateRepository": false,
+        "images": []
       },
       {
         "id": 2,
@@ -332,7 +336,8 @@
         "liveUrl": "https://fort-hare-tutors-hub.vercel.app/",
         "githubUrl": "https://github.com/DbyProsper/Fort-Hare-Tutors-Hub",
         "featured": true,
-        "privateRepository": false
+        "privateRepository": false,
+        "images": []
       },
       {
         "id": 3,
@@ -352,7 +357,8 @@
         "liveUrl": "https://precision-weather.vercel.app/",
         "githubUrl": "https://github.com/DbyProsper/precision-weather",
         "featured": false,
-        "privateRepository": false
+        "privateRepository": false,
+        "images": []
       },
       {
         "id": 4,
@@ -371,7 +377,8 @@
         "liveUrl": "https://devnotes-plus.vercel.app/",
         "githubUrl": "https://github.com/DbyProsper/devnotes-plus",
         "featured": false,
-        "privateRepository": false
+        "privateRepository": false,
+        "images": []
       }
     ],
     "visible": true

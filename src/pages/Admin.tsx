@@ -10,14 +10,14 @@ type Json = string | number | boolean | Json[] | { [key: string]: Json };
 type Message = { id: string; name: string; email: string; message: string; read: boolean; createdAt: string };
 type InboxPage = { messages: Message[]; cursor: string | null };
 const labels: Record<string,string> = { profile:'Profile & CV', hero:'Introduction', journey:'Journey', skills:'Skills', projects:'Projects', hire:'Why hire me', contact:'Contact', navigation:'Navigation', footer:'Footer', seo:'Search & sharing', appearance:'Colors' };
-const label = (key: string) => labels[key] || key.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
+const label = (key: string) => (key === 'images' ? 'Additional project images' : labels[key]) || key.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
 const fieldClass = 'w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40';
 
 function FieldEditor({ value, template, name, onChange }: { value: Json; template: Json; name: string; onChange: (value: Json) => void }) {
   const [uploading, setUploading] = useState(false);
   if (Array.isArray(value)) {
-    const example = (template as Json[])[0];
-    return <div className="space-y-3"><div className="flex items-center justify-between"><h3 className="font-semibold capitalize">{label(name)}</h3><Button size="sm" variant="outline" onClick={() => {
+    const example = name === 'images' ? { image: '', imageAlt: '' } : (template as Json[])[0];
+    return <div className="space-y-3"><div className="flex items-center justify-between"><h3 className="font-semibold capitalize">{label(name)}</h3><Button size="sm" variant="outline" disabled={name === 'images' && value.length >= 20} onClick={() => {
       const item = structuredClone(example);
       if (item && typeof item === 'object' && !Array.isArray(item) && 'id' in item) item.id = Date.now();
       onChange([...value, item]);
