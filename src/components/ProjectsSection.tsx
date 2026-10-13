@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Github, Lock, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github, Lock, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useContent, SectionImage, type SiteContent } from '@/lib/content';
@@ -12,6 +12,29 @@ function ProjectLinks({ project }: { project: Project }) {
     {project.privateRepository ? <span className="inline-flex gap-2 items-center text-sm text-muted-foreground"><Lock className="w-4 h-4" />{texts.private}</span> : project.githubUrl && <Button variant="heroOutline" size="sm" asChild><a href={project.githubUrl} target="_blank" rel="noopener noreferrer"><Github className="w-4 h-4" />{texts.code}</a></Button>}
   </div>;
 }
+function ProjectGallery({ project }: { project: Project }) {
+  const images = [{ image: project.image, imageAlt: `${project.title} preview` }, ...(project.images || [])].filter(item => item.image);
+  const [index, setIndex] = useState(0);
+  if (!images.length) return null;
+  const activeIndex = index % images.length;
+  const active = images[activeIndex];
+  const move = (direction: number) => setIndex(current => (current + direction + images.length) % images.length);
+  return <section aria-label={`${project.title} images`} aria-roledescription="carousel" className="space-y-3" onKeyDown={event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault(); move(event.key === 'ArrowLeft' ? -1 : 1);
+    }
+  }}>
+    <div className="group relative aspect-[16/10] overflow-hidden rounded-lg bg-muted/30" tabIndex={0} aria-label="Project image. Use left and right arrow keys to browse.">
+      <img key={active.image} src={active.image} alt={active.imageAlt || `${project.title} image ${activeIndex + 1}`} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
+      {images.length > 1 && <>
+        <Button type="button" size="icon" variant="outline" className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/90" aria-label="Previous project image" onClick={() => move(-1)}><ChevronLeft className="w-5 h-5" /></Button>
+        <Button type="button" size="icon" variant="outline" className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/90" aria-label="Next project image" onClick={() => move(1)}><ChevronRight className="w-5 h-5" /></Button>
+      </>}
+    </div>
+    <div className="flex items-start justify-between gap-3 text-sm text-muted-foreground" aria-live="polite" aria-atomic="true"><p>{active.imageAlt}</p><span className="shrink-0">{activeIndex + 1} / {images.length}</span></div>
+  </section>;
+}
+
 export default function ProjectsSection() {
   const content = useContent();
   const { projects, texts } = content.projects;
@@ -29,8 +52,6 @@ export default function ProjectsSection() {
       </article>)}</div>
       <div className="text-center mt-12"><Button variant="heroOutline" size="lg" asChild><a href={content.profile.githubUrl} target="_blank" rel="noopener noreferrer"><Github className="w-5 h-5" />{texts.allProjects}</a></Button></div>
     </div>
-    <Dialog open={!!selected} onOpenChange={open => { if (!open) setSelected(null); }}><DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">{selected && <><DialogTitle>{selected.title}</DialogTitle><div className="space-y-4" role="region" aria-label={`${selected.title} images`}>
-      {[{image:selected.image,imageAlt:`${selected.title} preview`}, ...(selected.images || [])].filter(item => item.image).map((item,index) => <figure key={`${item.image}-${index}`} className="space-y-2"><img src={item.image} alt={item.imageAlt || `${selected.title} image ${index+1}`} loading={index === 0 ? 'eager' : 'lazy'} className="rounded-lg w-full h-auto object-contain" />{item.imageAlt && index > 0 && <figcaption className="text-sm text-muted-foreground">{item.imageAlt}</figcaption>}</figure>)}
-    </div><DialogDescription>{selected.longDescription}</DialogDescription><h4 className="font-semibold text-secondary">{texts.problem}</h4><p className="text-sm text-muted-foreground">{selected.problem}</p><h4 className="font-semibold text-primary">{texts.solution}</h4><p className="text-sm text-muted-foreground">{selected.solution}</p><ProjectLinks project={selected} /></>}</DialogContent></Dialog>
+    <Dialog open={!!selected} onOpenChange={open => { if (!open) setSelected(null); }}><DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">{selected && <><DialogTitle>{selected.title}</DialogTitle><ProjectGallery key={selected.id} project={selected} /><DialogDescription>{selected.longDescription}</DialogDescription><h4 className="font-semibold text-secondary">{texts.problem}</h4><p className="text-sm text-muted-foreground">{selected.problem}</p><h4 className="font-semibold text-primary">{texts.solution}</h4><p className="text-sm text-muted-foreground">{selected.solution}</p><ProjectLinks project={selected} /></>}</DialogContent></Dialog>
   </section>;
 }
