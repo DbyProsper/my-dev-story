@@ -21,7 +21,8 @@ const TypewriterText = ({
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    const currentFullText = texts[textIndex];
+    const currentFullText = texts[textIndex % texts.length] || '';
+    if (!texts.length) return;
 
     if (isPaused) {
       const pauseTimer = setTimeout(() => {

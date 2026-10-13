@@ -1,6 +1,8 @@
-import { Terminal, Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { useContent, Copy } from '@/lib/content';
+import { Terminal, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
+  const content = useContent();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,18 +12,16 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="flex items-center gap-2">
-              <Terminal className="w-5 h-5 text-primary" />
-              <span className="font-mono font-bold">dev.portfolio</span>
+              {content.footer.image ? <img src={content.footer.image} alt={content.footer.imageAlt} className="w-8 h-8 object-contain" /> : <Terminal className="w-5 h-5 text-primary" />}
+              <span className="font-mono font-bold"><Copy section="footer" field="devportfolio" /></span>
             </div>
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              Building the web, one component at a time.
-            </p>
+            <p className="text-sm text-muted-foreground text-center md:text-left"><Copy section="footer" field="Building_the_web_one_component" /></p>
           </div>
 
           {/* Social Links */}
           <div className="flex gap-4">
             <a
-              href="https://github.com/DbyProsper"
+              href={content.profile.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -30,7 +30,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/prosper-masuku-25505a306/"
+              href={content.profile.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -39,7 +39,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:mthabisisebata113@gmail.com"
+              href={`mailto:${content.profile.email}`}
               className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
@@ -50,9 +50,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-8 pt-6 border-t border-border/30 text-center">
-          <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-            © {currentYear} · Prosper Masuku - Made with React & TypeScript
-          </p>
+          <p className="text-sm text-muted-foreground flex items-center justify-center gap-1"><Copy section="footer" field="label" />{currentYear}<Copy section="footer" field="Prosper_Masuku_Made_with_React" /></p>
         </div>
       </div>
     </footer>

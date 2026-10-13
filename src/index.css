@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -41,12 +41,12 @@
     --radius: 0.75rem;
 
     /* Custom properties */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(175 80% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(15 90% 60%), hsl(25 90% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(265 80% 65%), hsl(290 80% 55%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.65));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary) / 0.65));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent) / 0.65));
     --gradient-glass: linear-gradient(135deg, hsl(222 47% 12% / 0.8), hsl(222 47% 8% / 0.6));
     --gradient-hero: radial-gradient(ellipse at 50% 0%, hsl(175 80% 50% / 0.15) 0%, transparent 50%);
-    
+
     --shadow-glow: 0 0 40px hsl(175 80% 50% / 0.3);
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
     --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.4);
@@ -153,35 +153,35 @@
   }
 
   @keyframes slide-up {
-    from { 
-      opacity: 0; 
-      transform: translateY(30px); 
+    from {
+      opacity: 0;
+      transform: translateY(30px);
     }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
   @keyframes slide-in-left {
-    from { 
-      opacity: 0; 
-      transform: translateX(-30px); 
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
     }
-    to { 
-      opacity: 1; 
-      transform: translateX(0); 
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
   @keyframes scale-in {
-    from { 
-      opacity: 0; 
-      transform: scale(0.9); 
+    from {
+      opacity: 0;
+      transform: scale(0.9);
     }
-    to { 
-      opacity: 1; 
-      transform: scale(1); 
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -221,3 +221,6 @@
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 }
+
+section[id] { scroll-margin-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }

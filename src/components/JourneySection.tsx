@@ -1,7 +1,10 @@
+import { useContent, Copy, ContentIcon, SectionImage } from '@/lib/content';
 import { useEffect, useRef, useState } from 'react';
-import { Rocket, Code, Lightbulb, Trophy, Zap } from 'lucide-react';
+
 
 interface MilestoneProps {
+  image: string;
+  imageAlt: string;
   year: string;
   title: string;
   description: string;
@@ -10,20 +13,21 @@ interface MilestoneProps {
   index: number;
 }
 
-const Milestone = ({ year, title, description, icon, isVisible, index }: MilestoneProps) => {
+const Milestone = ({ year, title, description, icon, image, imageAlt, isVisible, index }: MilestoneProps) => {
   const isEven = index % 2 === 0;
-  
+
   return (
-    <div 
+    <div
       className={`relative flex items-center gap-4 md:gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
     >
       {/* Content Card */}
-      <div 
+      <div
         className={`flex-1 glass-card p-6 hover-lift transition-all duration-500 ${
           isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isEven ? '-translate-x-8' : 'translate-x-8'}`
         }`}
         style={{ transitionDelay: `${index * 150}ms` }}
       >
+        {image && <img src={image} alt={imageAlt} loading="lazy" className="w-full h-40 object-cover rounded-lg mb-4" />}
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-mono text-sm mb-3">
           {year}
         </span>
@@ -32,7 +36,7 @@ const Milestone = ({ year, title, description, icon, isVisible, index }: Milesto
       </div>
 
       {/* Timeline Node */}
-      <div 
+      <div
         className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-card border-2 border-primary items-center justify-center text-primary z-10 transition-all duration-500 ${
           isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
         }`}
@@ -48,41 +52,11 @@ const Milestone = ({ year, title, description, icon, isVisible, index }: Milesto
 };
 
 const JourneySection = () => {
+  const content = useContent();
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLElement>(null);
 
-  const milestones = [
-    {
-      year: '2019',
-      title: 'The Spark',
-      description: 'Wrote my first "Hello World" and got hooked, Was in grade 10 doing IT as a subject at highschool. What started as curiosity became a passion that would change everything.',
-      icon: <Lightbulb className="w-5 h-5" />,
-    },
-    {
-      year: '2021',
-      title: 'Deep Dive',
-      description: 'Finished matric, Started learning HTML, CSS, and JavaScript. Built countless projects, broke things, fixed them, and learned the beauty of clean code.',
-      icon: <Code className="w-5 h-5" />,
-    },
-    {
-      year: '2022',
-      title: 'Framework Era',
-      description: 'Went into Varsity for my first year in Bsc Computer science and physics, Discovered React and fell in love with component-based architecture. Started building demo applications to learn more.',
-      icon: <Rocket className="w-5 h-5" />,
-    },
-    {
-      year: '2023',
-      title: 'Full-Stack Journey',
-      description: 'While traversing through university curricula, I Expanded into backend development with Node.js and databases. Understanding the full picture made me a better developer.',
-      icon: <Zap className="w-6 h-6" />,
-    },
-    {
-      year: '2024+',
-      title: 'Continuous Growth',
-      description: 'Now focused on performance, accessibility, and clean architecture. Every day is a new opportunity to learn and create.',
-      icon: <Trophy className="w-6 h-6" />,
-    },
-  ];
+  const milestones = useContent().journey.milestones.map(item => ({ ...item, icon: <ContentIcon name={item.icon} /> }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,7 +75,7 @@ const JourneySection = () => {
     items?.forEach((item) => observer.observe(item));
 
     return () => observer.disconnect();
-  }, []);
+  }, [milestones.length]);
 
   return (
     <section
@@ -114,17 +88,15 @@ const JourneySection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_0%_50%,hsl(175_80%_50%_/_0.05)_0%,transparent_50%)]" />
 
       <div className="container-narrow mx-auto relative">
+        <SectionImage section="journey" />
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-mono text-sm mb-4">
-            {'<journey />'}
+            {content.journey.eyebrow}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            My Programming <span className="gradient-text">Journey</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4"><Copy section="journey" field="My_Programming" /><span className="gradient-text"><Copy section="journey" field="Journey" /></span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From curious beginner to passionate developer — every line of code has been a step forward.
-          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto"><Copy section="journey" field="From_curious_beginner_to_passionate" /></p>
         </div>
 
         {/* Timeline */}

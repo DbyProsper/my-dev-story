@@ -1,8 +1,10 @@
+import { useContent, Copy } from '@/lib/content';
 import { useState, useEffect } from 'react';
 import { Menu, X, Terminal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
+  const content = useContent();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,16 +16,11 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '#journey', label: 'Journey' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#hire-me', label: 'Why Me' },
-    { href: '#contact', label: 'Contact' },
-  ];
+  const navLinks = useContent().navigation.navLinks;
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+    if (!href.startsWith('#')) { window.location.assign(href); return; }
+    const element = document.getElementById(href.slice(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -43,13 +40,13 @@ const Navigation = () => {
       <div className="container-narrow mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             aria-label="Home"
           >
-            <Terminal className="w-6 h-6 text-primary" />
-            <span className="font-mono font-bold text-lg">dev.portfolio</span>
+            {content.navigation.image ? <img src={content.navigation.image} alt={content.navigation.imageAlt} className="w-8 h-8 object-contain" /> : <Terminal className="w-6 h-6 text-primary" />}
+            <span className="font-mono font-bold text-lg"><Copy section="navigation" field="devportfolio" /></span>
           </a>
 
           {/* Desktop Navigation */}
@@ -72,9 +69,7 @@ const Navigation = () => {
               variant="hero"
               size="sm"
               onClick={() => scrollToSection('#contact')}
-            >
-              Get In Touch
-            </Button>
+            ><Copy section="navigation" field="Get_In_Touch" /></Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,9 +104,7 @@ const Navigation = () => {
                   variant="hero"
                   className="w-full"
                   onClick={() => scrollToSection('#contact')}
-                >
-                  Get In Touch
-                </Button>
+                ><Copy section="navigation" field="Get_In_Touch2" /></Button>
               </li>
             </ul>
           </div>

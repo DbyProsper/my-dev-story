@@ -1,0 +1,558 @@
+{
+  "hero": {
+    "texts": {
+      "portfolio": " ~/portfolio $ ",
+      "whoami": "whoami",
+      "Hi_Im": "Hi, I'm",
+      "FullStack_Developer_passionate_about_building": " Full-Stack Developer passionate about building beautiful, accessible, and high-performance web applications. Let's create something amazing together! ",
+      "View_Projects": " View Projects ",
+      "GitHub": " GitHub ",
+      "LinkedIn": " LinkedIn ",
+      "Download_CV": " Download CV "
+    },
+    "image": "/images/prosper.jpeg",
+    "imageAlt": "Prosper Masuku in a suit",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Python",
+      "HTML & CSS"
+    ],
+    "imagePosition": "center 35%",
+    "visible": true
+  },
+  "journey": {
+    "texts": {
+      "My_Programming": " My Programming ",
+      "Journey": "Journey",
+      "From_curious_beginner_to_passionate": " From curious beginner to passionate developer \u2014 every line of code has been a step forward. "
+    },
+    "image": "",
+    "imageAlt": "",
+    "milestones": [
+      {
+        "year": "2019",
+        "title": "The Spark",
+        "description": "Wrote my first \"Hello World\" and got hooked, Was in grade 10 doing IT as a subject at highschool. What started as curiosity became a passion that would change everything.",
+        "icon": "Lightbulb",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "year": "2021",
+        "title": "Deep Dive",
+        "description": "Finished matric, Started learning HTML, CSS, and JavaScript. Built countless projects, broke things, fixed them, and learned the beauty of clean code.",
+        "icon": "Code",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "year": "2022",
+        "title": "Framework Era",
+        "description": "Went into Varsity for my first year in Bsc Computer science and physics, Discovered React and fell in love with component-based architecture. Started building demo applications to learn more.",
+        "icon": "Rocket",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "year": "2023",
+        "title": "Full-Stack Journey",
+        "description": "While traversing through university curricula, I Expanded into backend development with Node.js and databases. Understanding the full picture made me a better developer.",
+        "icon": "Zap",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "year": "2024+",
+        "title": "Continuous Growth",
+        "description": "Now focused on performance, accessibility, and clean architecture. Every day is a new opportunity to learn and create.",
+        "icon": "Trophy",
+        "image": "",
+        "imageAlt": ""
+      }
+    ],
+    "visible": true,
+    "eyebrow": "<journey />"
+  },
+  "skills": {
+    "texts": {
+      "label": "%",
+      "Tech": " Tech ",
+      "Stack": "Stack",
+      "The_technologies_I_use_to": " The technologies I use to bring ideas to life \u2014 from concept to deployment. ",
+      "Also_familiar_with": "Also familiar with:"
+    },
+    "image": "",
+    "imageAlt": "",
+    "categories": [
+      {
+        "title": "Frontend",
+        "icon": "Globe",
+        "skills": [
+          {
+            "name": "HTML5 / CSS3",
+            "level": 95,
+            "icon": "Palette",
+            "color": "#e34f26",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "JavaScript / TypeScript",
+            "level": 92,
+            "icon": "Code2",
+            "color": "#f7df1e",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "Tailwind CSS",
+            "level": 90,
+            "icon": "Palette",
+            "color": "#38bdf8",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "React / Next.js",
+            "level": 88,
+            "icon": "Code2",
+            "color": "#61dafb",
+            "image": "",
+            "imageAlt": ""
+          }
+        ],
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "title": "Backend",
+        "icon": "Server",
+        "skills": [
+          {
+            "name": "Python",
+            "level": 88,
+            "icon": "Code2",
+            "color": "#3776ab",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "PostgreSQL / MongoDB",
+            "level": 83,
+            "icon": "Database",
+            "color": "#336791",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "Node.js / Express",
+            "level": 78,
+            "icon": "Server",
+            "color": "#68a063",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "REST APIs / GraphQL",
+            "level": 78,
+            "icon": "Server",
+            "color": "#e535ab",
+            "image": "",
+            "imageAlt": ""
+          }
+        ],
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "title": "Tools & DevOps",
+        "icon": "Wrench",
+        "skills": [
+          {
+            "name": "Git / GitHub",
+            "level": 90,
+            "icon": "GitBranch",
+            "color": "#f05032",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "VS Code / Vim",
+            "level": 88,
+            "icon": "Code2",
+            "color": "#007acc",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "Linux / Terminal",
+            "level": 82,
+            "icon": "Terminal",
+            "color": "#fcc624",
+            "image": "",
+            "imageAlt": ""
+          },
+          {
+            "name": "Docker / CI/CD",
+            "level": 75,
+            "icon": "Terminal",
+            "color": "#2496ed",
+            "image": "",
+            "imageAlt": ""
+          }
+        ],
+        "image": "",
+        "imageAlt": ""
+      }
+    ],
+    "additional": [
+      "Java(OOP)",
+      "C++",
+      "Webpack",
+      "Firebase",
+      "AWS",
+      "Figma",
+      "Sass",
+      "Vite",
+      "Prisma",
+      "Socket.io"
+    ],
+    "visible": true,
+    "eyebrow": "<skills />"
+  },
+  "projects": {
+    "texts": {
+      "eyebrow": "<projects />",
+      "heading": "Featured",
+      "accent": "Work",
+      "description": "A selection of projects that showcase my skills in building modern, user-focused applications.",
+      "allProjects": "View All on GitHub",
+      "demo": "Live Demo",
+      "code": "View Code",
+      "private": "Private repository",
+      "details": "View details",
+      "problem": "The Problem",
+      "solution": "The Solution",
+      "featured": "Featured"
+    },
+    "image": "",
+    "imageAlt": "",
+    "projects": [
+      {
+        "id": 5,
+        "title": "Champs Order Hub",
+        "description": "Online ordering for Champs Chicken, with pickup and delivery in Dikeni.",
+        "longDescription": "A digital ordering experience for Champs Chicken. Customers can browse the menu, order for pickup or delivery, and track their order.",
+        "problem": "Customers need a convenient way to explore the menu and order from their local restaurant.",
+        "solution": "A dedicated online hub brings menu browsing, ordering, and order tracking into one experience.",
+        "tech": [
+          "Online ordering",
+          "Delivery",
+          "Order tracking"
+        ],
+        "image": "/images/champs.png",
+        "liveUrl": "https://champs-driver-hub.vercel.app/",
+        "githubUrl": "",
+        "privateRepository": true,
+        "featured": true
+      },
+      {
+        "id": 6,
+        "title": "UFH Opportunity Hub",
+        "description": "One hub for University of Fort Hare academic opportunities, from tutorships to bursaries and leadership roles.",
+        "longDescription": "UFH Opportunity Hub helps students discover and apply for academic opportunities with one profile, smart auto-fill, and a clear application journey.",
+        "problem": "Students need an easier way to discover and apply for opportunities across the university.",
+        "solution": "A central opportunity hub connects discovery, profiles, and applications in one place.",
+        "tech": [
+          "Student opportunities",
+          "Applications",
+          "University portal"
+        ],
+        "image": "/images/ufh-opportunity.png",
+        "liveUrl": "https://ufh-opportunity-hub.vercel.app",
+        "githubUrl": "https://github.com/DbyProsper/ufh-opportunity-engine",
+        "privateRepository": false,
+        "featured": true
+      },
+      {
+        "id": 7,
+        "title": "MusicInsta",
+        "description": "A music community where artists and fans can discover, share, and connect.",
+        "longDescription": "MusicInsta brings music and community together, giving listeners a place to discover music and artists a space to connect with fans.",
+        "problem": "Artists and listeners need a shared space centered on music discovery and connection.",
+        "solution": "A dedicated social music platform with entry points for listeners and artists.",
+        "tech": [
+          "Music discovery",
+          "Artists",
+          "Community"
+        ],
+        "image": "/images/musicinsta.png",
+        "liveUrl": "https://artist-amp.vercel.app/landing",
+        "githubUrl": "",
+        "privateRepository": true,
+        "featured": true
+      },
+      {
+        "id": 1,
+        "title": "TaskFlow Pro",
+        "description": "A modern task management app with real-time collaboration and smart productivity insights.",
+        "longDescription": "TaskFlow Pro is a comprehensive project management solution designed for remote teams. It features real-time updates, kanban boards, and AI-powered productivity analytics.",
+        "problem": "Remote teams struggle with task visibility and often lose track of project progress across time zones.",
+        "solution": "Built a real-time sync engine using WebSockets that keeps all team members updated instantly, with smart notifications that respect work hours.",
+        "tech": [
+          "React",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "Socket.io",
+          "Redis"
+        ],
+        "image": "/taskflow-illustration.png",
+        "liveUrl": "https://teamflow-pro.vercel.app/",
+        "githubUrl": "https://github.com/DbyProsper/teamflow-pro",
+        "featured": true,
+        "privateRepository": false
+      },
+      {
+        "id": 2,
+        "title": "UFH Tutor Application & Management System",
+        "description": "Full-stack Tutor Application & Management System for the University of Fort Hare (UFH).",
+        "longDescription": "UFH Tutor Application & Management System streamlines the tutor application process for students and administrators at the University of Fort Hare. It offers a user-friendly interface for students to apply for tutoring positions and a robust admin panel for managing applications.",
+        "problem": "Administration of tutor applications at UFH was manual, time-consuming, and prone to errors.",
+        "solution": "Designed and developed a full-stack Tutor Application & Management System for the University of Fort Hare (UFH). The system allows students to register, apply for tutoring positions, upload supporting documents, save draft applications, and track application status. Administrators can securely review applications, manage statuses, and oversee user roles.",
+        "tech": [
+          "Typescript",
+          "React",
+          "Supabase (Auth + PostgreSQL), Tailwind CSS"
+        ],
+        "image": "/Tuorportal.png",
+        "liveUrl": "https://fort-hare-tutors-hub.vercel.app/",
+        "githubUrl": "https://github.com/DbyProsper/Fort-Hare-Tutors-Hub",
+        "featured": true,
+        "privateRepository": false
+      },
+      {
+        "id": 3,
+        "title": "WeatherWise",
+        "description": "Hyperlocal weather forecasting with beautiful visualizations and smart alerts.",
+        "longDescription": "WeatherWise provides accurate hyperlocal weather predictions using multiple data sources, presented through stunning animated visualizations.",
+        "problem": "Generic weather apps fail to capture microclimates and provide generic forecasts.",
+        "solution": "Integrated multiple weather APIs and used machine learning to improve accuracy for specific locations, presented through engaging SVG animations.",
+        "tech": [
+          "React",
+          "D3.js",
+          "Python",
+          "FastAPI",
+          "TensorFlow"
+        ],
+        "image": "/wt1.png",
+        "liveUrl": "https://precision-weather.vercel.app/",
+        "githubUrl": "https://github.com/DbyProsper/precision-weather",
+        "featured": false,
+        "privateRepository": false
+      },
+      {
+        "id": 4,
+        "title": "DevNotes",
+        "description": "Markdown-powered note-taking designed specifically for developers.",
+        "longDescription": "DevNotes combines the simplicity of markdown with powerful developer features like code execution, git integration, and smart linking.",
+        "problem": "Existing note apps don't understand developer workflows and lack code-first features.",
+        "solution": "Built a custom markdown parser with code block execution, vim keybindings, and seamless git sync for version control.",
+        "tech": [
+          "Electron",
+          "React",
+          "Monaco Editor",
+          "SQLite"
+        ],
+        "image": "/devnotes.png",
+        "liveUrl": "https://devnotes-plus.vercel.app/",
+        "githubUrl": "https://github.com/DbyProsper/devnotes-plus",
+        "featured": false,
+        "privateRepository": false
+      }
+    ],
+    "visible": true
+  },
+  "hire": {
+    "texts": {
+      "Why": " Why ",
+      "Hire_Me": "Hire Me",
+      "label": "? ",
+      "I_bring_more_than_technical": " I bring more than technical skills \u2014 I bring dedication, creativity, and a genuine passion for building great software. ",
+      "What_I_Bring_to_the": " What I Bring to the Table ",
+      "I_believe_great_software_is": " \"I believe great software is built by people who care deeply about their craft. I'm not just looking for a job \u2014 I'm looking for a team where I can grow, contribute, and build something meaningful together.\" "
+    },
+    "image": "",
+    "imageAlt": "",
+    "values": [
+      {
+        "icon": "Code2",
+        "title": "Clean Code Advocate",
+        "description": "I write code that's not just functional, but maintainable and scalable. Every line serves a purpose.",
+        "color": "hsl(175, 80%, 50%)",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "icon": "Zap",
+        "title": "Performance Obsessed",
+        "description": "Speed matters. I optimize every component to ensure lightning-fast load times and smooth interactions.",
+        "color": "hsl(45, 90%, 50%)",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "icon": "Users",
+        "title": "User-First Mindset",
+        "description": "Beautiful interfaces mean nothing without great UX. I design with empathy and accessibility in mind.",
+        "color": "hsl(265, 80%, 65%)",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "icon": "BookOpen",
+        "title": "Continuous Learner",
+        "description": "Technology evolves fast. I stay current with modern practices and love exploring new tools and frameworks.",
+        "color": "hsl(15, 90%, 60%)",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "icon": "MessageSquare",
+        "title": "Clear Communicator",
+        "description": "Technical concepts shouldn't be confusing. I bridge the gap between complex code and clear explanations.",
+        "color": "hsl(200, 80%, 50%)",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "icon": "Sparkles",
+        "title": "Problem Solver",
+        "description": "Challenges excite me. I approach every bug and feature with curiosity and persistence until it's solved.",
+        "color": "hsl(320, 80%, 55%)",
+        "image": "",
+        "imageAlt": ""
+      }
+    ],
+    "highlights": [
+      "Strong foundation in modern JavaScript/TypeScript",
+      "Experience with production-level React applications",
+      "Understanding of backend development and databases",
+      "Passionate about accessibility and web standards",
+      "Excellent debugging and problem-solving skills",
+      "Comfortable working in agile team environments"
+    ],
+    "visible": true,
+    "eyebrow": "<hire-me />"
+  },
+  "contact": {
+    "texts": {
+      "Lets": " Let's ",
+      "Connect": "Connect",
+      "Have_a_project_in_mind": " Have a project in mind or just want to chat? I'd love to hear from you. ",
+      "Your_Name": " Your Name ",
+      "Email_Address": " Email Address ",
+      "Message": " Message ",
+      "1000_characters": "/1000 characters ",
+      "Sending": " Sending... ",
+      "Send_Message": " Send Message ",
+      "Quick_Links": "Quick Links",
+      "Email": "Email",
+      "Location": "Location",
+      "Open_to_Remote_Work": "Open to Remote Work",
+      "Find_Me_Online": "Find Me Online",
+      "Available_for_Work": "Available for Work",
+      "Currently_open_to_fulltime_positions": " Currently open to full-time positions, freelance projects, and interesting collaborations. "
+    },
+    "image": "",
+    "imageAlt": "",
+    "socialLinks": [
+      {
+        "icon": "Github",
+        "href": "https://github.com/DbyProsper",
+        "label": "GitHub"
+      },
+      {
+        "icon": "Linkedin",
+        "href": "https://www.linkedin.com/in/prosper-masuku-25505a306",
+        "label": "LinkedIn"
+      },
+      {
+        "icon": "Mail",
+        "href": "mailto:mthabisisebata113@gmail.com",
+        "label": "Email"
+      }
+    ],
+    "visible": true,
+    "successMessage": "Thanks for reaching out! Your message has been delivered.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Tell me about your project or just say hi...",
+    "eyebrow": "<contact />"
+  },
+  "navigation": {
+    "texts": {
+      "devportfolio": "dev.portfolio",
+      "Get_In_Touch": " Get In Touch ",
+      "Get_In_Touch2": " Get In Touch "
+    },
+    "image": "",
+    "imageAlt": "",
+    "navLinks": [
+      {
+        "href": "#journey",
+        "label": "Journey"
+      },
+      {
+        "href": "#skills",
+        "label": "Skills"
+      },
+      {
+        "href": "#projects",
+        "label": "Projects"
+      },
+      {
+        "href": "#hire-me",
+        "label": "Why Me"
+      },
+      {
+        "href": "#contact",
+        "label": "Contact"
+      }
+    ]
+  },
+  "footer": {
+    "texts": {
+      "devportfolio": "dev.portfolio",
+      "Building_the_web_one_component": " Building the web, one component at a time. ",
+      "label": " \u00a9 ",
+      "Prosper_Masuku_Made_with_React": " \u00b7 Prosper Masuku - Made with React & TypeScript "
+    },
+    "image": "",
+    "imageAlt": ""
+  },
+  "profile": {
+    "name": "Prosper Masuku",
+    "email": "mthabisisebata113@gmail.com",
+    "githubUrl": "https://github.com/DbyProsper",
+    "linkedinUrl": "https://www.linkedin.com/in/prosper-masuku-25505a306/",
+    "cvUrl": "/documents/Prosper-Masuku-CV.docx",
+    "cvFilename": "Prosper-Masuku-CV.docx"
+  },
+  "seo": {
+    "title": "Prosper Masuku | Full-Stack Developer Portfolio",
+    "description": "Full-Stack Developer specializing in React, TypeScript, and Node.js. Building beautiful, accessible, and high-performance web applications.",
+    "keywords": "full-stack developer, React developer, TypeScript, Node.js, web developer, software engineer",
+    "canonicalUrl": ""
+  },
+  "appearance": {
+    "primary": "175 80% 50%",
+    "secondary": "15 90% 60%",
+    "accent": "265 80% 65%",
+    "background": "222 47% 6%",
+    "foreground": "210 40% 96%"
+  }
+}

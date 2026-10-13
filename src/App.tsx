@@ -1,3 +1,6 @@
+import { lazy, Suspense } from 'react';
+import { ContentProvider } from '@/lib/content';
+const Admin = lazy(() => import('./pages/Admin'));
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,7 +17,7 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Sonner 
+        <Sonner
           theme="dark"
           position="top-right"
           toastOptions={{
@@ -27,7 +30,8 @@ const App = () => (
         />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<ContentProvider><Index /></ContentProvider>} />
+            <Route path="/admin" element={<Suspense fallback={<p className="p-8">Loading administration…</p>}><Admin /></Suspense>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
