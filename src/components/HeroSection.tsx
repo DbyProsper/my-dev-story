@@ -130,7 +130,7 @@ const HeroSection = () => {
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-primary/25 via-transparent to-accent/25 blur-xl" />
           <figure className="relative glass-card p-3 border-primary/30 rotate-2 hover:rotate-0 transition-transform duration-500">
             <div className="flex gap-1.5 px-2 pt-1 pb-3" aria-hidden="true"><span className="w-2 h-2 rounded-full bg-secondary" /><span className="w-2 h-2 rounded-full bg-accent" /><span className="w-2 h-2 rounded-full bg-primary" /></div>
-            <img src={content.hero.image} alt={content.hero.imageAlt} style={{objectPosition:content.hero.imagePosition}} className="w-full aspect-[4/5] object-cover rounded-lg" loading="eager" width={480} height={600} />
+            <img src={content.hero.image} alt={content.hero.imageAlt} style={{objectPosition:content.hero.imagePosition}} className="portfolio-image w-full h-auto object-contain rounded-lg" loading="eager" width={480} height={600} />
             <figcaption className="font-mono text-xs text-primary px-2 pt-4 pb-2">{content.profile.name}</figcaption>
           </figure>
         </div>}

@@ -26,7 +26,7 @@ const ValueCard = ({ icon, title, description, color, image, imageAlt, isVisible
     >
       <span className="text-background">{icon}</span>
     </div>
-    {image && <img src={image} alt={imageAlt} loading="lazy" className="w-full h-40 object-cover rounded-lg mb-4" />}
+    {image && <img src={image} alt={imageAlt} loading="lazy" className="portfolio-image w-full h-auto object-contain rounded-lg mb-4" />}
     <h3 className="text-lg font-bold text-foreground mb-2">{title}</h3>
     <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
   </div>

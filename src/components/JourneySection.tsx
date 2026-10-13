@@ -22,12 +22,12 @@ const Milestone = ({ year, title, description, icon, image, imageAlt, isVisible,
     >
       {/* Content Card */}
       <div
-        className={`flex-1 glass-card p-6 hover-lift transition-all duration-500 ${
+        className={`min-w-0 flex-1 glass-card p-6 hover-lift transition-all duration-500 ${
           isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isEven ? '-translate-x-8' : 'translate-x-8'}`
         }`}
         style={{ transitionDelay: `${index * 150}ms` }}
       >
-        {image && <img src={image} alt={imageAlt} loading="lazy" className="w-full h-40 object-cover rounded-lg mb-4" />}
+        {image && <img src={image} alt={imageAlt} loading="lazy" className="portfolio-image w-full h-auto object-contain rounded-lg mb-4" />}
         <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-mono text-sm mb-3">
           {year}
         </span>
@@ -46,7 +46,7 @@ const Milestone = ({ year, title, description, icon, image, imageAlt, isVisible,
       </div>
 
       {/* Spacer for alternating layout */}
-      <div className="hidden md:block flex-1" />
+      <div className="hidden md:block min-w-0 flex-1" />
     </div>
   );
 };

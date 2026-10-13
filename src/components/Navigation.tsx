@@ -45,7 +45,7 @@ const Navigation = () => {
             className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             aria-label="Home"
           >
-            {content.navigation.image ? <img src={content.navigation.image} alt={content.navigation.imageAlt} className="w-8 h-8 object-contain" /> : <Terminal className="w-6 h-6 text-primary" />}
+            {content.navigation.image ? <img src={content.navigation.image} alt={content.navigation.imageAlt} className="portfolio-image w-8 h-8 object-contain" /> : <Terminal className="w-6 h-6 text-primary" />}
             <span className="font-mono font-bold text-lg"><Copy section="navigation" field="devportfolio" /></span>
           </a>
 

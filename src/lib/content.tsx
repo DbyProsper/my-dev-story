@@ -37,5 +37,5 @@ export function ContentIcon({ name }: { name: string }) {
 }
 export function SectionImage({ section }: { section: TextSection }) {
   const { image, imageAlt } = useContent()[section];
-  return image ? <img src={image} alt={imageAlt} loading="lazy" className="w-full max-h-80 object-cover rounded-xl border border-primary/20 mb-10" /> : null;
+  return image ? <img src={image} alt={imageAlt} loading="lazy" className="portfolio-image w-full h-auto object-contain rounded-xl border border-primary/20 mb-10" /> : null;
 }

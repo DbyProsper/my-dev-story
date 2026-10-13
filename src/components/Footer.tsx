@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="flex items-center gap-2">
-              {content.footer.image ? <img src={content.footer.image} alt={content.footer.imageAlt} className="w-8 h-8 object-contain" /> : <Terminal className="w-5 h-5 text-primary" />}
+              {content.footer.image ? <img src={content.footer.image} alt={content.footer.imageAlt} className="portfolio-image w-8 h-8 object-contain" /> : <Terminal className="w-5 h-5 text-primary" />}
               <span className="font-mono font-bold"><Copy section="footer" field="devportfolio" /></span>
             </div>
             <p className="text-sm text-muted-foreground text-center md:text-left"><Copy section="footer" field="Building_the_web_one_component" /></p>
