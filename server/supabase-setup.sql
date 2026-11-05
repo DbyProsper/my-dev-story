@@ -19,7 +19,7 @@ begin
     update public.portfolio_records set value=p_value,version=gen_random_uuid(),updated_at=now()
     where path=p_path and version=p_version returning version into new_version;
   end if;
-  if new_version is null then raise exception 'Record changed' using errcode='40001'; end if;
+  if new_version is null then raise exception 'Record changed' using errcode='PT409'; end if;
   return new_version;
 end;
 $$;

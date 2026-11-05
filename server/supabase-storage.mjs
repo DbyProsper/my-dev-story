@@ -12,7 +12,7 @@ export function client() {
 export const bucket = () => process.env.SUPABASE_MEDIA_BUCKET || 'portfolio-media';
 function check(error) {
   if (!error) return;
-  if (error.code === '40001' || error.code === '23505') throw new StoragePreconditionError('The record changed. Reload before publishing.');
+  if (error.code === 'PT409' || error.code === '40001' || error.code === '23505') throw new StoragePreconditionError('The record changed. Reload before publishing.');
   throw error;
 }
 export async function read(path) {
