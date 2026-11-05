@@ -1,3 +1,4 @@
+process.env.STORAGE_PROVIDER = 'blob';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { defaults, validateContent, validateMessage, validateUpload } from '../server/validation.mjs';

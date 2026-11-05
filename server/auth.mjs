@@ -1,6 +1,7 @@
+import { storageConfigured } from './storage.mjs';
 import { createHmac, createHash, timingSafeEqual } from 'node:crypto';
 export const cookieName = 'portfolio_admin';
-export function configured() { return !!process.env.BLOB_READ_WRITE_TOKEN && process.env.ADMIN_PASSWORD?.length >= 16 && process.env.ADMIN_SESSION_SECRET?.length >= 32; }
+export function configured() { return storageConfigured() && process.env.ADMIN_PASSWORD?.length >= 16 && process.env.ADMIN_SESSION_SECRET?.length >= 32; }
 export function digest(value) { return createHash('sha256').update(value).digest(); }
 export function passwordMatches(value) { return typeof value === 'string' && timingSafeEqual(digest(value), digest(process.env.ADMIN_PASSWORD || '')); }
 function sign(value) { return createHmac('sha256', `${process.env.ADMIN_SESSION_SECRET}:${process.env.ADMIN_PASSWORD}`).update(value).digest('hex'); }

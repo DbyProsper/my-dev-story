@@ -13,7 +13,8 @@ export function createHandler(store = blobStore) {
   const send = (status, value) => { res.statusCode = status; res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(value)); };
   try {
     if (req.method === 'GET' && route === 'content') {
-      const saved = process.env.BLOB_READ_WRITE_TOKEN ? await store.read('site/content.json') : null;
+      const saved = blobStore.storageConfigured() ? await store.read('site/content.json') : null;
+      if (!saved && process.env.STORAGE_PROVIDER === 'supabase') return send(503, { error: 'Published content has not been migrated yet.' });
       return send(200, saved?.value || defaults);
     }
     if (req.method === 'GET' && route === 'media') {
@@ -54,6 +55,7 @@ export function createHandler(store = blobStore) {
     if (route === 'logout' && req.method === 'POST') { res.setHeader('Set-Cookie', sessionCookie('', !!process.env.VERCEL)); return send(200, { ok: true }); }
     if (route === 'admin-content' && req.method === 'GET') {
       const saved = await store.read('site/content.json');
+      if (!saved && process.env.STORAGE_PROVIDER === 'supabase') return send(503, { error: 'Published content has not been migrated yet. Complete the verified import before editing.' });
       return send(200, { content: saved?.value || defaults, version: saved?.etag || null });
     }
     if (route === 'admin-content' && req.method === 'PUT') {

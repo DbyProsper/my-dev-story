@@ -61,3 +61,23 @@ The admin manages site content and existing layout options. Structural redesigns
 ### Preview published content locally
 
 Set `PUBLISHED_SITE_URL=https://my-dev-story-nine.vercel.app` in `.env.local` and restart `npm run dev`. Public content and uploaded media are read from that site; refresh after publishing changes. Admin, inbox, uploads, and contact writes remain local and require separate development credentials. Remove this setting to preview development storage or bundled defaults.
+
+## Supabase migration (prepared, not switched live)
+
+Dedicated project: **Developer Portfolio**, `yuyppcoectjbzvzjtchy`, in DbyPro's Org (Ireland).
+Private bucket: `portfolio-media`. Content, inbox, and rate-limit records use `portfolio_records`.
+Only the server secret has database/RPC access; there are no anonymous or signed-in user grants.
+The schema is recorded in `server/supabase-setup.sql` and was applied to the dedicated project.
+
+1. Recover access to the original Blob store, or obtain a complete export. Do not delete it.
+2. Set the original `BLOB_READ_WRITE_TOKEN`, `SUPABASE_URL`, and the new project's `SUPABASE_SECRET_KEY` privately in `.env.local`. Never use a VITE_ prefix. Keep `STORAGE_PROVIDER=blob` during preparation.
+3. Pause all source writes (admin edits and contact submissions) during export and import. Run `node scripts/migrate-storage.mjs export backups/portfolio-recovered` with a NEW folder. The exporter does not delete or overwrite source objects. A failed export has no manifest and must not be imported.
+4. Run `node scripts/migrate-storage.mjs import backups/portfolio-recovered`. It verifies checksums and media references before import, retains original media paths, refuses to overwrite different destination records, and verifies the copies. It copies inbox records too. Login rate-limit counters are intentionally not migrated.
+5. Only after import verification, set `STORAGE_PROVIDER=supabase`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, and `SUPABASE_MEDIA_BUCKET=portfolio-media` on Vercel. Keep the existing admin password/session secret. Redeploy and verify public content, image downloads, login, publishing, contact delivery, and private inbox access.
+6. Keep the private backup and original Blob store until the migration is accepted. Do not switch back to Blob after new writes without reconciling changes.
+
+The connected Supabase tools cannot retrieve the server secret. Obtain it from project Settings > API Keys and configure it privately, not in chat. The free plan still has storage/traffic quotas and inactivity pausing.
+
+## Emergency recovery — November 5, 2026
+
+The owner authorized starting from repository content without waiting for Blob recovery. Supabase is now the default provider; Blob is used only when explicitly selected. The public portfolio renders bundled content immediately and checks for live updates in the background. Supabase requires the project server secret for admin operations and uploads. Seed `site/content.json` only if absent; never overwrite content already stored in Supabase.

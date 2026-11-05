@@ -19,7 +19,7 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
 }
 export function ContentProvider({ children, value }: { children: ReactNode; value?: SiteContent }) {
   const [content, setContent] = useState<SiteContent>(defaults);
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
   const [loadError, setLoadError] = useState('');
   useEffect(() => {
     if (value) return;
@@ -32,11 +32,11 @@ export function ContentProvider({ children, value }: { children: ReactNode; valu
         const next = await api<SiteContent>('content', { signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15000)]) });
         if (!controller.signal.aborted) { setContent(next); setLoaded(true); setLoadError(''); }
       } catch {
-        if (!controller.signal.aborted) setLoadError('Unable to load the latest published content. Retrying automatically.');
+        if (!controller.signal.aborted) setLoadError('Live updates are temporarily unavailable. Showing the available portfolio content.');
       } finally { pending = false; }
     }
     void refresh();
-    const interval = window.setInterval(() => { if (!document.hidden) void refresh(); }, 30000);
+    const interval = window.setInterval(() => { if (!document.hidden) void refresh(); }, 300000);
     const onFocus = () => void refresh();
     window.addEventListener('focus', onFocus);
     window.addEventListener('online', onFocus);
@@ -47,7 +47,7 @@ export function ContentProvider({ children, value }: { children: ReactNode; valu
     for (const [key, val] of Object.entries(active.appearance)) document.documentElement.style.setProperty(`--${key}`, val);
   }, [active.appearance]);
   if (!value && !loaded) return <main className="min-h-screen grid place-items-center bg-background p-6"><p role="status">{loadError || 'Loading published portfolio…'}</p></main>;
-  return <ContentContext.Provider value={active}>{!value && loadError && <p role="status" className="fixed bottom-4 left-4 right-4 z-[100] rounded-lg bg-background border border-border p-3 text-sm">{loadError} Showing the last successfully loaded version.</p>}{children}</ContentContext.Provider>;
+  return <ContentContext.Provider value={active}>{!value && loadError && <p role="status" className="fixed bottom-4 left-4 right-4 z-[100] rounded-lg bg-background border border-border p-3 text-sm">{loadError}</p>}{children}</ContentContext.Provider>;
 }
 type TextSection = 'hero' | 'journey' | 'skills' | 'projects' | 'hire' | 'contact' | 'navigation' | 'footer';
 export function Copy({ section, field }: { section: TextSection; field: string }) {
