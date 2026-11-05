@@ -49,7 +49,7 @@ export function ContentProvider({ children, value }: { children: ReactNode; valu
   if (!value && !loaded) return <main className="min-h-screen grid place-items-center bg-background p-6"><p role="status">{loadError || 'Loading published portfolio…'}</p></main>;
   return <ContentContext.Provider value={active}>{!value && loadError && <p role="status" className="fixed bottom-4 left-4 right-4 z-[100] rounded-lg bg-background border border-border p-3 text-sm">{loadError}</p>}{children}</ContentContext.Provider>;
 }
-type TextSection = 'hero' | 'journey' | 'skills' | 'projects' | 'hire' | 'contact' | 'navigation' | 'footer';
+type TextSection = 'hero' | 'journey' | 'education' | 'skills' | 'projects' | 'hire' | 'contact' | 'navigation' | 'footer';
 export function Copy({ section, field }: { section: TextSection; field: string }) {
   return <>{(useContent()[section].texts as Record<string, string>)[field]}</>;
 }

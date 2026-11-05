@@ -76,6 +76,35 @@
     "visible": true,
     "eyebrow": "<journey />"
   },
+  "education": {
+    "texts": {
+      "eyebrow": "<education />",
+      "heading": "Academic",
+      "accent": "Background",
+      "description": "The academic foundation behind my approach to software, research, and problem-solving."
+    },
+    "image": "",
+    "imageAlt": "",
+    "qualifications": [
+      {
+        "title": "BSc Computer Science & Physics",
+        "institution": "University of Fort Hare",
+        "description": "Built a strong foundation in software development, algorithms, databases, mathematics, and physics, strengthening the analytical thinking I bring to complex technical problems.",
+        "icon": "GraduationCap",
+        "image": "",
+        "imageAlt": ""
+      },
+      {
+        "title": "BSc Honours in Computer Science",
+        "institution": "University of Fort Hare",
+        "description": "My research work centers on MusicInsta, a music-focused social platform exploring how artists and fans can discover, share, and connect through online communities.",
+        "icon": "Music",
+        "image": "",
+        "imageAlt": ""
+      }
+    ],
+    "visible": true
+  },
   "skills": {
     "texts": {
       "label": "%",
@@ -512,6 +541,10 @@
       {
         "href": "#journey",
         "label": "Journey"
+      },
+      {
+        "href": "#education",
+        "label": "Education"
       },
       {
         "href": "#skills",

@@ -9,7 +9,7 @@ import Index from './Index';
 type Json = string | number | boolean | Json[] | { [key: string]: Json };
 type Message = { id: string; name: string; email: string; message: string; read: boolean; createdAt: string };
 type InboxPage = { messages: Message[]; cursor: string | null };
-const labels: Record<string,string> = { profile:'Profile & CV', hero:'Introduction', journey:'Journey', skills:'Skills', projects:'Projects', hire:'Why hire me', contact:'Contact', navigation:'Navigation', footer:'Footer', seo:'Search & sharing', appearance:'Colors' };
+const labels: Record<string,string> = { profile:'Profile & CV', hero:'Introduction', journey:'Journey', education:'Education', skills:'Skills', projects:'Projects', hire:'Why hire me', contact:'Contact', navigation:'Navigation', footer:'Footer', seo:'Search & sharing', appearance:'Colors' };
 const label = (key: string) => (key === 'images' ? 'Additional project images' : labels[key]) || key.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
 const fieldClass = 'w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40';
 

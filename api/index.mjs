@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { Readable } from 'node:stream';
-import { defaults, ValidationError, validateContent, validateMessage, validateUpload } from '../server/validation.mjs';
+import { defaults, ValidationError, normalizeContent, validateContent, validateMessage, validateUpload } from '../server/validation.mjs';
 import * as blobStore from '../server/storage.mjs';
 import { configured, authenticated, passwordMatches, createSession, sessionCookie, clientKey } from '../server/auth.mjs';
 
@@ -15,7 +15,7 @@ export function createHandler(store = blobStore) {
     if (req.method === 'GET' && route === 'content') {
       const saved = blobStore.storageConfigured() ? await store.read('site/content.json') : null;
       if (!saved && process.env.STORAGE_PROVIDER === 'supabase') return send(503, { error: 'Published content has not been migrated yet.' });
-      return send(200, saved?.value || defaults);
+      return send(200, normalizeContent(saved?.value || defaults));
     }
     if (req.method === 'GET' && route === 'media') {
       const path = query.get('file');
@@ -56,7 +56,7 @@ export function createHandler(store = blobStore) {
     if (route === 'admin-content' && req.method === 'GET') {
       const saved = await store.read('site/content.json');
       if (!saved && process.env.STORAGE_PROVIDER === 'supabase') return send(503, { error: 'Published content has not been migrated yet. Complete the verified import before editing.' });
-      return send(200, { content: saved?.value || defaults, version: saved?.etag || null });
+      return send(200, { content: normalizeContent(saved?.value || defaults), version: saved?.etag || null });
     }
     if (route === 'admin-content' && req.method === 'PUT') {
       validateContent(body.content);

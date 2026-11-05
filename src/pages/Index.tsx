@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import JourneySection from '@/components/JourneySection';
+import EducationSection from '@/components/EducationSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import WhyHireMeSection from '@/components/WhyHireMeSection';
@@ -38,6 +39,7 @@ const Index = () => {
         <main id="main-content">
           {content.hero.visible && <HeroSection />}
           {content.journey.visible && <JourneySection />}
+          {content.education.visible && <EducationSection />}
           {content.skills.visible && <SkillsSection />}
           {content.projects.visible && <ProjectsSection />}
           {content.hire.visible && <WhyHireMeSection />}

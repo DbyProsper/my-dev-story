@@ -2,6 +2,18 @@ import defaults from '../src/data/content.json' with { type: 'json' };
 
 export { defaults };
 export class ValidationError extends Error {}
+export function normalizeContent(value) {
+  const normalized = { ...defaults, ...value };
+  normalized.education = value?.education || defaults.education;
+  const navigation = { ...defaults.navigation, ...(value?.navigation || {}) };
+  const navLinks = Array.isArray(navigation.navLinks) ? navigation.navLinks : defaults.navigation.navLinks;
+  const educationLink = defaults.navigation.navLinks.find(link => link.href === '#education');
+  navigation.navLinks = navLinks.some(link => link.href === '#education')
+    ? navLinks
+    : [...navLinks.slice(0, 1), educationLink, ...navLinks.slice(1)].filter(Boolean);
+  normalized.navigation = navigation;
+  return normalized;
+}
 export function validateContent(value, template = defaults, path = '') {
   if (/^\.projects\.projects\.\d+\.images$/.test(path)) {
     // Galleries are optional for portfolios saved before this feature existed.

@@ -1,7 +1,7 @@
 process.env.STORAGE_PROVIDER = 'blob';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { defaults, validateContent, validateMessage, validateUpload } from '../server/validation.mjs';
+import { defaults, normalizeContent, validateContent, validateMessage, validateUpload } from '../server/validation.mjs';
 import { authenticated, createSession, passwordMatches, sessionCookie } from '../server/auth.mjs';
 import handler, { createHandler } from '../api/index.mjs';
 import { memoryStore } from './memory-store.mjs';
@@ -11,6 +11,15 @@ test('portfolio retains all original projects after the three additions', () => 
   assert.deepEqual(defaults.projects.projects.map(p=>p.title), ['Champs Order Hub','UFH Opportunity Hub','MusicInsta','TaskFlow Pro','UFH Tutor Application & Management System','WeatherWise','DevNotes']);
   assert.equal(defaults.projects.projects[0].privateRepository,true);
   assert.equal(defaults.projects.projects[2].githubUrl,'');
+});
+test('older saved content receives the education section and navigation link', () => {
+  const saved = structuredClone(defaults);
+  delete saved.education;
+  saved.navigation.navLinks = saved.navigation.navLinks.filter(link => link.href !== '#education');
+  const normalized = normalizeContent(saved);
+  assert.equal(normalized.education.qualifications.length, 2);
+  assert.equal(normalized.navigation.navLinks[1].href, '#education');
+  assert.equal(normalized.projects.projects.length, 7);
 });
 test('content rejects executable URLs, remote CV redirects, malformed sections, and duplicate IDs', () => {
   for (const mutate of [c=>c.profile.githubUrl='javascript:alert(1)',c=>c.hero.image='//evil.test/image',c=>c.profile.cvUrl='https://drive.google.com/cv',c=>c.skills.categories[0].skills[0].level=101,c=>c.hero=null,c=>c.projects.projects[1].id=c.projects.projects[0].id]) {

@@ -55,7 +55,7 @@ const Navigation = () => {
               <li key={link.href}>
                 <button
                   onClick={() => scrollToSection(link.href)}
-                  className="px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/50"
+                  className="px-2 lg:px-4 py-2 text-sm lg:text-base text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/50"
                 >
                   {link.label}
                 </button>
